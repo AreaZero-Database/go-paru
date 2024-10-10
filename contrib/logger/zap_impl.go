@@ -5,7 +5,9 @@ import (
 	"go.uber.org/zap"
 )
 
-var _ log.Logger = (*Logger)(nil)
+type TypeLogger = log.Logger
+
+var _ TypeLogger = (*Logger)(nil)
 
 type Logger struct {
 	log  *zap.Logger

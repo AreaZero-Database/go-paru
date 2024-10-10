@@ -9,9 +9,11 @@ import (
 	"time"
 )
 
+type TypeServer = server.Server
+
 const DefaultShutdownTimeout = time.Minute
 
-var _ server.Server = (*Server)(nil)
+var _ TypeServer = (*Server)(nil)
 
 type Server struct {
 	ShutdownTimeout time.Duration

@@ -2,20 +2,20 @@ package log
 
 import "strings"
 
-// Level is a logger level.
+// Level is a zap level.
 type Level int8
 
-// LevelKey is logger level key.
+// LevelKey is zap level key.
 const LevelKey = "level"
 
 const (
-	// LevelDebug is logger debug level.
+	// LevelDebug is zap debug level.
 	LevelDebug Level = iota
-	// LevelInfo is logger info level.
+	// LevelInfo is zap info level.
 	LevelInfo
-	// LevelWarn is logger warn level.
+	// LevelWarn is zap warn level.
 	LevelWarn
-	// LevelError is logger error level.
+	// LevelError is zap error level.
 	LevelError
 )
 
@@ -34,7 +34,7 @@ func (l Level) String() string {
 	}
 }
 
-// ParseLevel parses a level string into a logger Level value.
+// ParseLevel parses a level string into a zap Level value.
 func ParseLevel(s string) Level {
 	switch strings.ToUpper(s) {
 	case "DEBUG":

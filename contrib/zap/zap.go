@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 )
 
-// createZapLogger creates a new zap logger with different log levels and outputs.
+// createZapLogger creates a new zap zap with different log levels and outputs.
 func createZapLogger(path string, rotationMaxSize int, compress bool) *zap.Logger {
 	encoder := getJSONEncoder()
 	// Define level-handling logic.

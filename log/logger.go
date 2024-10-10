@@ -1,6 +1,6 @@
 package log
 
-// Logger logger interface
+// Logger zap interface
 type Logger interface {
 	Debug(v ...any)
 	DebugF(format string, v ...any)

@@ -1,4 +1,4 @@
-module github.com/AreaZero-Database/go-paru/contrib/http
+module github.com/AreaZero-Database/go-paru/contrib/server
 
 go 1.23.1
 

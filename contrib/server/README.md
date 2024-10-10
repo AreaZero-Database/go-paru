@@ -1,4 +1,4 @@
-# HTTP
+# Server
 
 > The http server implementation by [iris](https://github.com/kataras/iris).
 

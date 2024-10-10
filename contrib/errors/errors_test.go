@@ -1,10 +1,29 @@
 package errors_test
 
 import (
+	"context"
+	"errors"
 	paruErrors "github.com/AreaZero-Database/go-paru/contrib/errors"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
+
+func TestNewError(t *testing.T) {
+	ctx := context.TODO()
+	err := paruErrors.
+		New(400, "bad request").
+		WithContext(ctx).
+		WithDescription("test error").
+		WithError(errors.New("test error")).
+		WithStack()
+
+	assert.Equal(t, err.Code, 400)
+	assert.Equal(t, err.Reason, "bad request")
+	assert.Equal(t, err.Description, "test error")
+	assert.Equal(t, err.Err.Error(), "test error")
+	assert.NotEmpty(t, err.Stack)
+	assert.Equal(t, err.Context, ctx)
+}
 
 func TestBadRequest(t *testing.T) {
 	err := paruErrors.BadRequest("bad request")

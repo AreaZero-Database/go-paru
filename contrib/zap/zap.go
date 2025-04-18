@@ -30,7 +30,7 @@ func createZapLogger(path string, rotationMaxSize int, compress bool) *zap.Logge
 	errorCore := zapcore.NewCore(encoder, errorMultiWriteSyncer, errorLevel)
 
 	coreArr := []zapcore.Core{core, errorCore}
-	return zap.New(zapcore.NewTee(coreArr...), zap.AddCaller(), zap.AddCallerSkip(1))
+	return zap.New(zapcore.NewTee(coreArr...), zap.AddCaller(), zap.AddCallerSkip(2))
 }
 
 // getJSONEncoder returns a JSON encoder with custom configurations.
